@@ -1,0 +1,49 @@
+### WORKING
+GET http://localhost:5000/api/expenses
+###
+GET http://localhost:5000/api/expenses/id/1
+
+### WORKING
+GET http://localhost:5000/api/expenses/month/1
+
+### WORKING
+GET http://localhost:5000/api/expenses/shop/Niagara
+
+### POST NOT WORKING: GIVEN BODY INFORMATION IS NOT FORWARDED TO CREATEITEM
+POST http://localhost:5000/api/expenses HTTP/1.1
+
+content-type: application/json
+
+{
+  "item": "Groceries",
+  "shop": "Prisma",
+  "price": 123.98,
+  "date": "2023-01-04"
+}
+
+### POST NOT WORKING: GIVEN BODY INFORMATION IS NOT FORWARDED TO CREATEITEM
+POST http://localhost:5000/api/expenses HTTP/1.1
+
+content-type: application/json
+
+{
+  "item": "PS5",
+  "shop": "Verkkokauppa",
+  "price": 669.99,
+  "date": "2023-01-01"
+}
+
+### PUT NOT WORKING: GIVEN INFORMATION IS NOT FORWARDED TO CREATEITEM
+PUT http://localhost:5000/api/expenses HTTP/1.1
+
+content-type: application/json
+
+{
+  "item": "Ice cream",
+  "shop": "Citymarket",
+  "price": 4.95,
+  "date": "2023-01-01"
+}
+
+### WORKING
+DELETE http://localhost:5000/api/expenses/3
