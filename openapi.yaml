@@ -35,7 +35,7 @@ paths:
         '500':
           $ref: '#/components/responses/500Error'
     post:
-      description: NOT WORKING. Should create a new item.
+      description: Creates a new item.
       requestBody:
         required: true
         content:
@@ -46,6 +46,8 @@ paths:
                 item:
                   type: string
                 shop:
+                  type: string
+                category:
                   type: string
                 price:
                   type: number
@@ -81,7 +83,7 @@ paths:
           $ref: '#/components/responses/500Error'
 
     put:
-      description: NOT WORKING. Should update an existing item.
+      description: Updates an existing item by ID.
       requestBody:
         required: true
         content:
