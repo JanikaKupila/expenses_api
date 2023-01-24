@@ -56,10 +56,12 @@ const getItemsByShop = async (req, res) => {
 
 // NOT WORKING: parameters given in localhost are not accesible here
 const createItem = async (req, res) => {
-  // Price not defined, since can be f.e. null
   const schema = Joi.object({
     item: Joi.string().min(1).required(),
     shop: Joi.string().min(1).required(),
+    category: Joi.string().min(1).required(),
+    price: Joi.number().required(),
+    date: Joi.date().required(),
   });
 
   const { error } = schema.validate(req.body);
@@ -75,7 +77,6 @@ const createItem = async (req, res) => {
     price: req.body.price,
     date: req.body.date,
   };
-
   try {
     const response = await expenses.save(item);
     if (response) {
@@ -87,12 +88,14 @@ const createItem = async (req, res) => {
   }
 };
 
-// NOT WORKING: parameters given in localhost are not accesible here
 const updateItem = async (req, res) => {
   const schema = Joi.object({
     id: Joi.number().integer().required(),
     item: Joi.string().min(2).required(),
     shop: Joi.string().min(2).required(),
+    category: Joi.string().min(1).required(),
+    price: Joi.number().required(),
+    date: Joi.date().required(),
   });
   const { error } = schema.validate(req.body);
   if (error) {

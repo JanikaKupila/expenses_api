@@ -37,7 +37,7 @@ const expenses = {
     });
   }),
   save: (item) => new Promise((resolve, reject) => {
-    connection.query('INSERT INTO cities SET ?', item, (err, result) => {
+    connection.query('INSERT INTO expenses SET ?', item, (err, result) => {
       if (err) {
         reject(err);
       }
@@ -55,9 +55,9 @@ const expenses = {
   }),
   // Replaced "item" with "i" to shorten connection.query
   updateById: (i) => new Promise((resolve, reject) => {
-    // Category not added: on todo when updateById is working
-    const updateQuery = 'UPDATE expenses SET item = ?, shop = ?, price = ?, date=? WHERE id = ?;';
-    connection.query(updateQuery, [i.name, i.shop, i.price, i.date, i.id], (err, result) => {
+    const updateQuery = 'UPDATE expenses SET item = ?, shop = ?, category = ?, price = ?, date = ? WHERE id = ?;';
+    // eslint-disable-next-line max-len
+    connection.query(updateQuery, [i.item, i.shop, i.category, i.price, i.date, i.id], (err, result) => {
       if (err) {
         reject(err);
       }
