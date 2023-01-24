@@ -53,11 +53,10 @@ const expenses = {
       resolve(result);
     });
   }),
-  // Replaced "item" with "i" to shorten connection.query
-  updateById: (i) => new Promise((resolve, reject) => {
+  updateById: (item) => new Promise((resolve, reject) => {
     const updateQuery = 'UPDATE expenses SET item = ?, shop = ?, category = ?, price = ?, date = ? WHERE id = ?;';
     // eslint-disable-next-line max-len
-    connection.query(updateQuery, [i.item, i.shop, i.category, i.price, i.date, i.id], (err, result) => {
+    connection.query(updateQuery, [item.item, item.shop, item.category, item.price, item.date, item.id], (err, result) => {
       if (err) {
         reject(err);
       }

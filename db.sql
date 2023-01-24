@@ -14,5 +14,3 @@ INSERT INTO `expenses`(`item`, `shop`, `category`, `price`, `date`) VALUES ('Mov
 INSERT INTO `expenses`(`item`, `shop`, `category`, `price`, `date`) VALUES ('Baby supplies', 'OZbaby', 'Baby stuff', 127.90, '2023-01-16');
 INSERT INTO `expenses`(`item`, `shop`, `category`, `price`, `date`) VALUES ('Blu-rays', 'Arrow Store', 'Leisure', 58.90, '2023-02-18');
 INSERT INTO `expenses`(`item`, `shop`, `category`, `price`, `date`) VALUES ('Groceries', 'Prisma', 'Necessities', 113.78, '2023-02-01');
-
-DROP TABLE expenses;

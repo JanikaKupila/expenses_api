@@ -4,7 +4,7 @@ info:
   title: Expenses Tracker Api
   description: A simple API to track where user's money goes. Made for TAMK Business Information System studies Backend course project.
 servers:
-  - url: https://expenses-api-r7a9.onrender.com/api/
+  - url: https://expenses-api-r7a9.onrender.com/
 paths:
   /expenses:
     get:

@@ -54,7 +54,6 @@ const getItemsByShop = async (req, res) => {
   }
 };
 
-// NOT WORKING: parameters given in localhost are not accesible here
 const createItem = async (req, res) => {
   const schema = Joi.object({
     item: Joi.string().min(1).required(),

@@ -1,0 +1,36 @@
+###
+GET https://expenses-api-r7a9.onrender.com/api/expenses
+###
+GET https://expenses-api-r7a9.onrender.com/api/expenses/id/1
+###
+GET https://expenses-api-r7a9.onrender.com/api/expenses/month/1
+
+###
+GET https://expenses-api-r7a9.onrender.com/api/expenses/shop/Citymarket
+
+###
+POST https://expenses-api-r7a9.onrender.com/api/expenses HTTP/1.1
+content-type: application/json
+
+{
+  "item": "Milk",
+  "shop": "Prisma",
+  "category": "Necessities",
+  "price": 1.24,
+  "date": "2023-01-04"
+}
+###
+PUT https://expenses-api-r7a9.onrender.com/api/expenses HTTP/1.1
+content-type: application/json
+
+{
+  "id": 7,
+  "item": "Milk",
+  "shop": "Prisma",
+  "category": "Necessities",
+  "price": 1.24,
+  "date": "2023-01-09"
+}
+
+###
+DELETE https://expenses-api-r7a9.onrender.com/api/expenses/7
