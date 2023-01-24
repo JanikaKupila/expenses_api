@@ -5,7 +5,7 @@ const {
 
 const router = express.Router();
 
-router.get('expenses/', getExpenses);
+router.get('/', getExpenses);
 router.get('/id/:searchid', getItemById);
 router.get('/month/:searchmonth', getItemsByMonth);
 router.get('/shop/:searchshop', getItemsByShop);
